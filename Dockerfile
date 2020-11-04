@@ -17,9 +17,15 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 USER root
 
 RUN	apt-get install htop
+RUN apt_get -y install aria2
+RUN apt_get -y install nmap
+RUN apt_get -y install traceroute
 
 # 3) install packages
 RUN pip install --no-cache-dir networkx scipy python-louvain
+RUN conda install --yes geopandas
+RUN pip install --no-cache-dir babypandas
+RUN conda clean -tipy
 
 # 4) change back to notebook user
 COPY /run_jupyter.sh /
