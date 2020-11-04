@@ -23,7 +23,6 @@ RUN apt_get -y install traceroute
 
 # 3) install packages
 RUN pip install --no-cache-dir networkx scipy python-louvain
-RUN conda install --yes geopandas
 RUN pip install --no-cache-dir babypandas
 RUN conda clean -tipy
 
